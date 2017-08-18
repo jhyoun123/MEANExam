@@ -1,0 +1,10 @@
+<h1>New Question</h1>
+
+<form (submit)="add_question()" #formData='ngForm'>
+  Question <textarea name="question" required minlength="15" [(ngModel)]='question.question'></textarea><br>
+  Correct Answer: <input type="text" name="answer" required [(ngModel)]='question.answer'><br>
+  Fake Answer 1: <input type="text" name="fakeOne" required [(ngModel)]='question.fakeOne'><br>
+  Fake Answer 2: <input type="text" name="fakeTwo" required [(ngModel)]='question.fakeTwo'><br>
+  <a [routerLink]="['/home','list']">Cancel</a>
+  <input type="submit" value="Add Question" [disabled]='formData.invalid'>
+</form>

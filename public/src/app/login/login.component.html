@@ -1,0 +1,7 @@
+<h1>Welcome to Trivia Test!</h1>
+
+<p>Please enter your name</p>
+<form (submit)="on_submit()" #formData='ngForm'>
+  Name: <input type="text" name="name" required minlength="2" [(ngModel)]='user.name'>
+  <input type="submit" value="Login" [disabled]='formData.invalid'>
+</form>

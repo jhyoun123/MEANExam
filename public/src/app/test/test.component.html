@@ -1,0 +1,21 @@
+<p>Hi! {{user}}</p>
+<p>Choose an answer for each of the questions and submit the test once done.</p>
+<p>Good luck!</p>
+
+
+<form (submit)="add_test()" #formData='ngForm'>
+    <p>1. {{test[0].question}}</p>
+    <input type="radio" name="first" [(ngModel)]="first" value="correct" required/> {{test[0].answer}}<br>
+    <input type="radio" name="first" [(ngModel)]="first" value="wrong1"/> {{test[0].fakeOne}}<br>         
+    <input type="radio" name="first" [(ngModel)]="first" value="wrong"/> {{test[0].fakeTwo}}
+    <p>2. {{test[1].question}}</p>
+    <input type="radio" name="second"[(ngModel)]="second" value="correct" required/> {{test[1].answer}}<br>
+    <input type="radio" name="second" [(ngModel)]="second" value="wrong1"/> {{test[1].fakeOne}}<br>
+    <input type="radio" name="second" [(ngModel)]="second" value="wrong"/> {{test[1].fakeTwo}}
+    <p>3. {{test[2].question}}</p>
+    <input type="radio" name="third" [(ngModel)]="third" value="correct" required/> {{test[2].answer}}<br>
+    <input type="radio" name="third" [(ngModel)]="third" value="wrong1"/> {{test[2].fakeOne}}<br>
+    <input type="radio" name="third" [(ngModel)]="third" value="wrong"/> {{test[2].fakeTwo}}<br>
+    <a [routerLink]="['/home','list']">Cancel</a>
+    <input type="submit" value="Submit" [disabled]='formData.invalid'>
+</form>

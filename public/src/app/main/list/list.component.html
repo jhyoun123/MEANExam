@@ -1,0 +1,22 @@
+<br>
+<br>
+<div>
+  <a [routerLink]="['/lets_play']">Play</a>
+  <br>
+  <br>
+  <h3>Click the button above to start the trivia game.</h3>
+</div>
+
+Search: <input type="text" name="search" [(ngModel)]="search" placeholder="Filter list...">
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Score</th>
+    <th>Percentage</th>
+  </tr>
+  <tr *ngFor="let test of all_tests">
+		<td>{{test.user}}</td>
+		<td>{{test.score}}</td>
+		<td>{{test.percentage}}</td>
+	</tr>
+</table>
